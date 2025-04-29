@@ -16,8 +16,8 @@ global.info = {
 }
 
 /*============== OWNER ==============*/
-global.owner = ['6281283516246', '6288225750488']
-global.xmaze = ['6281283516246', '6288225750488']
+global.owner = [global.info.nomorown, '6288225750488']
+global.xmaze = [global.info.nomorown, '6288225750488']
 global.mods = []
 global.prems = []
 
