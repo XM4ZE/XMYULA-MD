@@ -1,7 +1,7 @@
 {
-    "name": "XMCodes",
+    "name": "XMYULA-MD",
     "version": "4.0.5",
-    "description": "Script Paid By Maximus | XM4ZE",
+    "description": "Script By Maximus | XM4ZE",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -14,7 +14,6 @@
         "test": "node test.js"
     },
     "keywords": [
-        "termux-whatsapp-bot",
         "whatsapp-bot",
         "whatsapp",
         "js-whatsapp",
@@ -39,7 +38,7 @@
     "license": "MIT",
     "dependencies": {
         "@bochilteam/scraper": "^4.2.4",
-        "@distube/ytdl-core": "npm:@distube/ytdl-core@latest",
+        "@distube/ytdl-core": "*",
         "@google/generative-ai": "npm:@google/generative-ai",
         "@vitalets/google-translate-api": "^9.2.0",
         "@xct007/frieren-scraper": "npm:@xct007/frieren-scraper@latest",
