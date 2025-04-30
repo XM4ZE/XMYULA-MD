@@ -24,8 +24,8 @@ npm start
 | Owner Menu     | Quotes Menu    | RPG Menu       |
 | Sticker Menu   | Tools Menu     |                |
 
-## 💳 Pricing
-| Version       | Index.js | Main.js | Payment Gateway | Price     |
+## 💳 Pricing Paid Script
+| Version       | Jadibot | Main.js | Payment Gateway | Price     |
 |---------------|----------|---------|-----------------|-----------|
 | Free          | ❌       | ❌      | ❌              | Free      |
 | Paid          | ✔️       | ✔️      | ✔️              | 150K IDR  |
@@ -44,7 +44,7 @@ global.info = {
 ```
 
 ## 🔑 Required API
-Register at [Botcahx API](https://api.botcahx.eu.org) and add your key:
+Register at [Botcahx API](https://api.botcahx.eu.org) and add your key in ```config.js```:
 ```javascript
 global.btc = 'YOUR_API_KEY'
 ```
