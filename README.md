@@ -24,10 +24,10 @@ npm start
 | Owner Menu     | Quotes Menu    | RPG Menu       |
 | Sticker Menu   | Tools Menu     |                |
 
-## 💳 Pricing Paid Script
-| Version       | Jadibot | Main.js | Payment Gateway | Price     |
+## 💳 Benefits of Paid Scripts
+| Version       | VIP Plugins | Simple code | Payment Gateway | Price     |
 |---------------|----------|---------|-----------------|-----------|
-| Free          | ❌       | ❌      | ❌              | Free      |
+| Free          | ❌       | ❌      | ❌              | ⭐ Repository      |
 | Paid          | ✔️       | ✔️      | ✔️              | 150K IDR  |
 
 ## ⚙️ Configuration
