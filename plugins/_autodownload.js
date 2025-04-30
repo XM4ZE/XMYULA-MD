@@ -92,30 +92,41 @@ async function downloadInstagram(link, m) {
 
 // DOWNLOADER FACEBOOK 
 async function downloadFacebook(link, m) {
-	try {
-		const response = await fetch(`https://api.botcahx.eu.org/api/dowloader/fbdown3?url=${link}&apikey=${btc}`);
-		const data = await response.json();
-		const urls = data.result.url.urls;
+    try {
+        const response = await fetch(`https://api.botcahx.eu.org/api/dowloader/fbdown3?url=${link}&apikey=${btc}`);
+        const data = await response.json();
+        const urls = data.result.url.urls;
 
-		if (Array.isArray(urls)) {
-			for (let url of urls) {
-				if (url.sd) {
-					await conn.sendMessage(m.chat, {
-						video: {
-							url: url.sd
-						},
-						caption: `*Facebook Downloader*`
-					}, {
-						mention: m
-					})
-					break;
-				}
-			}
-		}
-
-	} catch (error) {
-		console.error(error);
-	}
+        if (Array.isArray(urls)) {
+            let videoUrl = null;
+            for (let url of urls) {
+                if (url.hd) {
+                    videoUrl = url.hd;
+                    break;
+                }
+            }
+            if (!videoUrl) {
+                for (let url of urls) {
+                    if (url.sd) {
+                        videoUrl = url.sd;
+                        break;
+                    }
+                }
+            }
+            if (videoUrl) {
+                await conn.sendMessage(m.chat, {
+                    video: {
+                        url: videoUrl
+                    },
+                    caption: `*Facebook Downloader*`
+                }, {
+                    mention: m
+                });
+            }
+        }
+    } catch (error) {
+        console.error(error);
+    }
 }
 /**=========================================**/
 export async function before(m, {
