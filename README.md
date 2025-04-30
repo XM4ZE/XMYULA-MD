@@ -44,7 +44,9 @@ global.info = {
 ```
 
 ## 🔑 Required API
-Register at [Botcahx API](https://api.botcahx.eu.org) and add your key in ```config.js```:
+Register at [Botcahx API](https://api.botcahx.eu.org) and add your key: 
+
+Paste in: `config.js`
 ```javascript
 global.btc = 'YOUR_API_KEY'
 ```
