@@ -27,7 +27,7 @@ npm start
 ## 💳 Benefits of Paid Scripts
 | Version       | VIP Plugins | Simple code | Payment Gateway | Price     |
 |---------------|----------|---------|-----------------|-----------|
-| Free          | ❌       | ❌      | ❌              | ⭐ Repository      |
+| Free          | ❌       | ❌      | ❌              | Click ⭐ Repositories      |
 | Paid          | ✔️       | ✔️      | ✔️              | 150K IDR  |
 
 ## ⚙️ Configuration
