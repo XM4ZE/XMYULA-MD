@@ -221,7 +221,7 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
 
 // XM4ZE - XMYULA-MD - github.com/XM4ZE/XMYULA-MD
 handler.help = ['proses', 'done']
-handler.tags = ['order']
+handler.tags = ['store']
 handler.command = /^(proses|done)$/i
 
 /* 
