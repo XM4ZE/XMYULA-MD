@@ -1,1 +1,139 @@
-import{spawn as o}from"child_process";import e from"path";import{clear as n}from"console";import{promisify as s}from"util";import{fileURLToPath as t}from"url";import{join as i,dirname as r}from"path";import c from"fs";import l from"cfonts";import a from"chalk";import g from"readline";const p=r(t(import.meta.url)),start=async()=>{const n=[e.join(p,"main.js"),...process.argv.slice(2)];o(process.argv[0],n,{stdio:["inherit","inherit","inherit","ipc"]}).on("exit",(o=>{console.log(a.red(`[!] Process exited with code: ${o}`)),1!==o&&0!==o||start()}))},runTest=async()=>{console.log(a.green("[~] Running test script..."));o(process.argv[0],[e.join(p,"test.js")],{stdio:["inherit","inherit","inherit","ipc"]}).on("exit",(o=>{console.log(a[0===o?"green":"red"](`[${0===o?"√":"!"}] Test completed with code: ${o}`))}))};var m;console.clear(),await(m=300,new Promise((o=>setTimeout(o,m)))),l.say("\n  XMCODES-MD",{font:"tiny",align:"left",colors:["cyan"],space:!1}),console.log(a.gray("-".repeat(50))),console.log(a.cyanBright("  Simple WhatsApp Bot with Pairing Code Authentication")),console.log(a.gray("-".repeat(50))),console.log(a.yellow("\n  Contact Info:")),console.log(a.white(`  Instagram: ${a.cyan("https://instagram.com/maximusstore.id")}`)),console.log(a.white(`  Facebook:  ${a.cyan("https://facebook.com/maximusstoreindonesia")}`)),console.log(a.white(`  WhatsApp:  ${a.cyan("wa.me/6281283516246")}`)),console.log(a.gray("-".repeat(50)));const showMenu=()=>{console.log(a.yellow("\n  Select an option:")),console.log(a.green("  1. Lanjut Menghubungkan")),console.log(a.green("  2. Run Test Script")),console.log(a.gray("-".repeat(30)))};if(c.existsSync(e.join(p,"sessions")))if(c.existsSync(e.join(p,"sessions","creds.json")))console.log(a.green("\n[√] Found valid session, continuing...")),start();else{console.log(a.yellow("\n[!] Sessions folder found, but creds.json not found")),c.rmSync(e.join(p,"sessions"),{recursive:!0}),showMenu();const o=g.createInterface({input:process.stdin,output:process.stdout}),n=await s(o.question).bind(o)(a.magenta("  ➤ Select: "));o.close(),"1"===n?(console.log(a.green("\n[~] Starting WhatsApp Bot...")),start()):"2"===n?await runTest():(console.log(a.red("\n[!] Invalid choice")),process.exit(1))}else{console.log(a.yellow("\n[!] No sessions folder found")),showMenu();const o=g.createInterface({input:process.stdin,output:process.stdout}),e=await s(o.question).bind(o)(a.magenta("  ➤ Select: "));o.close(),"1"===e?(console.log(a.green("\n[~] Starting WhatsApp Bot...")),start()):"2"===e?await runTest():(console.log(a.red("\n[!] Invalid choice")),process.exit(1))}console.log(a.gray("-".repeat(50))),console.log(a.cyanBright("  Thank you for using this script!")),console.log(a.gray("-".repeat(50)));
+import { spawn } from 'child_process';
+import path from 'path';
+import { clear } from 'console';
+import { promisify } from 'util';
+import { fileURLToPath } from 'url';
+import { join, dirname } from 'path';
+import fs from 'fs';
+import CFonts from 'cfonts';
+import chalk from 'chalk';
+import readline from 'readline';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const checkSessionsFolder = () => {
+  return fs.existsSync(path.join(__dirname, 'sessions'));
+};
+
+const checkCredsFile = () => {
+  return fs.existsSync(path.join(__dirname, 'sessions', 'creds.json'));
+};
+
+const deleteSessionsFolder = () => {
+  fs.rmSync(path.join(__dirname, 'sessions'), { recursive: true });
+};
+
+const start = async () => {
+  const args = [path.join(__dirname, 'main.js'), ...process.argv.slice(2)];
+  const p = spawn(process.argv[0], args, { 
+    stdio: ['inherit', 'inherit', 'inherit', 'ipc'] 
+  });
+  
+  p.on('exit', (code) => {
+    console.log(chalk.red(`[!] Process exited with code: ${code}`));
+    if (code === 1 || code === 0) start();
+  });
+};
+
+const runTest = async () => {
+  console.log(chalk.green('[~] Running test script...'));
+  const p = spawn(process.argv[0], [path.join(__dirname, 'test.js')], { 
+    stdio: ['inherit', 'inherit', 'inherit', 'ipc'] 
+  });
+  
+  p.on('exit', (code) => {
+    console.log(chalk[code === 0 ? 'green' : 'red'](`[${code === 0 ? '√' : '!'}] Test completed with code: ${code}`));
+  });
+};
+
+const sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+console.clear();
+await sleep(300);
+
+CFonts.say('\n  XMCODES-MD', {
+  font: 'tiny',
+  align: 'left',
+  colors: ['cyan'],
+  space: false
+});
+
+console.log(chalk.gray('-'.repeat(50)));
+
+console.log(chalk.cyanBright('  Simple WhatsApp Bot with Pairing Code Authentication'));
+console.log(chalk.gray('-'.repeat(50)));
+
+console.log(chalk.yellow('\n  Contact Info:'));
+console.log(chalk.white(`  Instagram: ${chalk.cyan('https://instagram.com/maximusstore.id')}`));
+console.log(chalk.white(`  Facebook:  ${chalk.cyan('https://facebook.com/maximusstoreindonesia')}`));
+console.log(chalk.white(`  WhatsApp:  ${chalk.cyan('wa.me/6281283516246')}`));
+console.log(chalk.gray('-'.repeat(50)));
+
+const showMenu = () => {
+  console.log(chalk.yellow('\n  Select an option:'));
+  console.log(chalk.green('  1. Lanjut Menghubungkan'));
+  console.log(chalk.green('  2. Run Test Script'));
+  console.log(chalk.gray('-'.repeat(30)));
+};
+
+if (checkSessionsFolder()) {
+  if (!checkCredsFile()) {
+    console.log(chalk.yellow('\n[!] Sessions folder found, but creds.json not found'));
+    deleteSessionsFolder();
+    
+    showMenu();
+    
+    const rl = readline.createInterface({ 
+      input: process.stdin, 
+      output: process.stdout 
+    });
+    
+    const choice = await promisify(rl.question).bind(rl)(
+      chalk.magenta('  ➤ Select: ')
+    );
+    rl.close();
+    
+    if (choice === '1') {
+      console.log(chalk.green('\n[~] Starting WhatsApp Bot...'));
+      start();
+    } else if (choice === '2') {
+      await runTest();
+    } else {
+      console.log(chalk.red('\n[!] Invalid choice'));
+      process.exit(1);
+    }
+  } else {
+    console.log(chalk.green('\n[√] Found valid session, continuing...'));
+    start();
+  }
+} else {
+  console.log(chalk.yellow('\n[!] No sessions folder found'));
+  
+  showMenu();
+  
+  const rl = readline.createInterface({ 
+    input: process.stdin, 
+    output: process.stdout 
+  });
+  
+  const choice = await promisify(rl.question).bind(rl)(
+    chalk.magenta('  ➤ Select: ')
+  );
+  rl.close();
+  
+  if (choice === '1') {
+    console.log(chalk.green('\n[~] Starting WhatsApp Bot...'));
+    start();
+  } else if (choice === '2') {
+    await runTest();
+  } else {
+    console.log(chalk.red('\n[!] Invalid choice'));
+    process.exit(1);
+  }
+}
+
+console.log(chalk.gray('-'.repeat(50)));
+console.log(chalk.cyanBright('  Thank you for using this script!'));
+console.log(chalk.gray('-'.repeat(50)));
