@@ -41,7 +41,7 @@
         "@distube/ytdl-core": "*",
         "@google/generative-ai": "npm:@google/generative-ai",
         "@vitalets/google-translate-api": "^9.2.0",
-        "baileys": "^6.7.17",
+        "baileys": "*",
         "awesome-phonenumber": "^2.68.0",
         "axios": "^0.24.0",
         "canvas": "^3.1.0",
