@@ -26,12 +26,12 @@ npm start
 
 ## 💳 Benefits of Paid Scripts
 | Version       | VIP Plugins | Simple code | Payment Gateway | Price     |
-|---------------|----------|---------|-----------------|-----------|
-| Free          | ❌       | ❌      | ❌              | Click ⭐ Repositories      |
-| Paid          | ✔️       | ✔️      | ✔️              | 150K IDR  |
+|---------------|------------|-------------|-----------------|-----------|
+| Free          | ❌         | ❌          | ❌              | Click ⭐ Repo |
+| Paid          | ✔️         | ✔️          | ✔️              | 150K IDR  |
 
 ## ⚙️ Configuration
-Edit `config.js` to customize:
+Edit `config.js`:
 ```javascript
 global.info = {
   nomorbot: '62882257504889',
@@ -44,22 +44,20 @@ global.info = {
 ```
 
 ## 🔑 Required API
-Register at [Botcahx API](https://api.botcahx.eu.org) and add your key: 
-
-Paste in: `config.js`
+Get key at [Botcahx API](https://api.botcahx.eu.org) then add to `config.js`:
 ```javascript
 global.btc = 'YOUR_API_KEY'
 ```
 
-## 🖥️ Installation Guide
+## 🖥️ Installation
 ### For Windows/VPS/RDP:
-1. Install prerequisites:
+1. Install:
    - [Git](https://git-scm.com/downloads)
    - [NodeJS](https://nodejs.org/en/download)
    - [ImageMagick](https://imagemagick.org/script/download.php)
    - [FFmpeg](https://ffmpeg.org/download.html) (Add to PATH)
 
-2. Run these commands:
+2. Run:
 ```bash
 git clone https://github.com/XM4ZE/XMYULA-MD
 cd XMYULA-MD
@@ -67,10 +65,36 @@ npm install
 npm start
 ```
 
+## 📦 XMPanels Packages
+| Tier          | Specifications            | New Price  | Renewal Price |
+|---------------|---------------------------|------------|---------------|
+| **Economy 🏠** | 1.5GB RAM • 2GB Disk • 50% CPU | Rp 6.800 | Rp 6.000 |
+|               | 3GB RAM • 5GB Disk • 70% CPU   | Rp 13.500 | Rp 12.500 |
+| **Premium 🏣** | 4GB RAM • 7GB Disk • 90% CPU   | Rp 18.500 | Rp 16.500 |
+|               | 5GB RAM • 9GB Disk • 120% CPU  | Rp 22.500 | Rp 21.000 |
+|               | 6GB RAM • 13GB Disk • 140% CPU | Rp 27.500 | Rp 26.000 |
+| **Business 🏬**| 7GB RAM • 15GB Disk • 160% CPU | Rp 32.500 | Rp 31.000 |
+|               | 8GB RAM • 20GB Disk • 180% CPU | Rp 37.500 | Rp 35.000 |
+|               | **UNLIMITED** Resources       | Rp 105.000 | Rp 100.000 |
+
+### 🛠️ Included Software:
+```
+• yarn • ffmpeg • imagemagick • PHP • Golang 
+• python3 • python3-PIP • PM2 • PNPM
+• speedtest-CLI • nodemon • puppeteer
+```
+
+### 📝 Terms & Conditions:
+- Duration: 30 Days
+- 30-Day Warranty (void if rules violated)
+- Renewal prices apply only to active servers
+
+<p align="right"><strong>XMPanels</strong></p>
+
 ## 📞 Contact
-- WhatsApp: [Contact Me](https://wa.me/6281283516246)
+- WhatsApp: [Contact](https://wa.me/6281283516246)
 - Group: [Join Group](https://chat.whatsapp.com/B8cELUFmR7mLdF7wxP8EsA)
-- Support: [Buy Me Coffee](https://telegra.ph/file/f11ccd2ca8a5136aacfb3.jpg)
+- Donate: [Buy Me Coffee](https://telegra.ph/file/f11ccd2ca8a5136aacfb3.jpg)
 
 ## 👥 Contributors
 <div align="center">
@@ -81,7 +105,7 @@ npm start
           <img src="https://github.com/BOTCAHX.png?size=100" width="100" style="border-radius:50%">
           <br>
           <strong>Tio</strong>
-          <sub>Api Contributor</sub>
+          <sub>API</sub>
         </a>
       </td>
       <td align="center">
@@ -89,7 +113,7 @@ npm start
           <img src="https://github.com/BochilGaming.png?size=100" width="100" style="border-radius:50%">
           <br>
           <strong>Bochil</strong>
-          <sub>Module Contributor</sub>
+          <sub>Modules</sub>
         </a>
       </td>
       <td align="center">
@@ -97,7 +121,7 @@ npm start
           <img src="https://github.com/Nurutomo.png?size=100" width="100" style="border-radius:50%">
           <br>
           <strong>Nurutomo</strong>
-          <sub>Base Contributor</sub>
+          <sub>Base</sub>
         </a>
       </td>
     </tr>
