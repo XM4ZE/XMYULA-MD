@@ -89,8 +89,6 @@ npm start
 - 30-Day Warranty (void if rules violated)
 - Renewal prices apply only to active servers
 
-<p align="right"><strong>XMPanels</strong></p>
-
 ## 📞 Contact
 - WhatsApp: [Contact](https://wa.me/6281283516246)
 - Group: [Join Group](https://chat.whatsapp.com/B8cELUFmR7mLdF7wxP8EsA)
