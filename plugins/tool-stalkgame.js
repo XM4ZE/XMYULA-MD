@@ -29,7 +29,7 @@ let handler = async (m, {
 		let [id, zoneId] = text.split(',');
 		if (!id || !zoneId) throw `Example: ${usedPrefix + command} 84830127,2169`;
 
-		let data = await (await fetch(`https://api.botcahx.eu.org/api/stalk/ml-v2?id=214885010&server=2253&apikey=${btc}`)).json()
+		let data = await (await fetch(`https://api.botcahx.eu.org/api/stalk/ml-v2?id=${id}&server=${zoneId}&apikey=${btc}`)).json()
 		let result = data.result
 		if (!result.success) throw result.error;
 
