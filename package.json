@@ -59,7 +59,6 @@
         "javascript-obfuscator": "^4.1.0",
         "jimp": "^0.16.1",
         "jsdom": "^26.1.0",
-        "link-preview-js": "^3.0.4",
         "lodash": "^4.17.21",
         "lowdb": "^3.0.0",
         "md5": "^2.3.0",
