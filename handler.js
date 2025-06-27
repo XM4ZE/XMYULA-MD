@@ -932,6 +932,8 @@ export async function handler(chatUpdate) {
 					chat.pembatasan = false
 				if (!('antiSticker' in chat))
 					chat.antiSticker = false
+                if (!('antiStickerPack' in chat))
+					chat.antiStickerPack = false
 				if (!('antiLinkWa' in chat))
 					chat.antiLinkWa = false
 				if (!('antiFoto' in chat))
@@ -995,6 +997,7 @@ export async function handler(chatUpdate) {
 					antiDoc: false,
 					antiPorn: false,
 					antiSticker: false,
+					antiStickerPack: false,
 					viewonce: false,
 					antiToxic: false,
 					antiVirtex: false,
