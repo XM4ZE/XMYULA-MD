@@ -27,6 +27,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 *• antidelete*
 *• antiviewonce* 
 *• antisticker* 
+*• antistickerpack*
 *• antivirtex*
 *• simi*
 *• teks* 
@@ -299,6 +300,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
                 }
             }
             chat.antiSticker = isEnable
+            break
+        case 'antistickerpack':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiStickerPack = isEnable
             break
         case 'antibadword':
             if (m.isGroup) {
