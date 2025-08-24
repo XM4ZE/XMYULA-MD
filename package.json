@@ -1,0 +1,84 @@
+{
+    "name": "XMCodes",
+    "version": "5.1.0",
+    "description": "Script Free By Maximus | XM4ZE",
+    "main": "index.js",
+    "type": "module",
+    "directories": {
+        "lib": "lib",
+        "src": "src",
+        "plugins": "plugins"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "test": "node test.js"
+    },
+    "homepage": "https://github.com/XM4ZE/XMYULA-MD",
+    "author": {
+        "name": "XM4ZE"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/XM4ZE/XMYULA-MD.git"
+    },
+    "bugs": {
+        "url": "https://github.com/XM4ZE/XMYULA-MD/issues"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@bochilteam/scraper": "^4.2.4",
+        "@distube/ytdl-core": "github:XM4ZE/ytdl-core",
+        "@google/generative-ai": "npm:@google/generative-ai",
+        "@vitalets/google-translate-api": "^9.2.0",
+        "api-dylux": "^1.3.9",
+        "awesome-phonenumber": "^2.68.0",
+        "axios": "^0.24.0",
+        "baileys": "github:WhiskeySockets/Baileys",
+        "canvas": "^3.1.0",
+        "cfonts": "^2.10.0",
+        "chalk": "^5.0.0",
+        "cheerio": "github:XM4ZE/cheerio",
+        "colors": "1.4.0",
+        "express": "^4.17.3",
+        "file-type": "^17.1.1",
+        "fluent-ffmpeg": "^2.1.2",
+        "formdata-node": "^4.3.2",
+        "genshin-db": "npm:genshin-db@latest",
+        "got": "^12.5.3",
+        "human-readable": "^0.2.1",
+        "javascript-obfuscator": "^4.1.0",
+        "jimp": "^1.6.0",
+        "jsdom": "^26.1.0",
+        "lodash": "^4.17.21",
+        "lowdb": "^3.0.0",
+        "md5": "^2.3.0",
+        "mime-types": "^2.1.35",
+        "moment-timezone": "^0.5.33",
+        "mongoose": "github:Automattic/mongoose",
+        "node-cache": "^5.1.2",
+        "node-fetch": "^3.2.0",
+        "node-gtts": "^2.0.2",
+        "node-os-utils": "^1.3.6",
+        "node-schedule": "^2.1.1",
+        "node-webpmux": "^3.1.1",
+        "ocr-space-api-wrapper": "^2.3.0",
+        "pdfkit": "^0.15.0",
+        "perf_hooks": "^0.0.1",
+        "pino": "^7.8.0",
+        "pino-pretty": "^7.5.1",
+        "qrcode": "^1.5.0",
+        "qrcode-terminal": "^0.12.0",
+        "readline": "^1.3.0",
+        "remove.bg": "^1.3.0",
+        "similarity": "^1.2.1",
+        "socket.io": "^4.4.1",
+        "syntax-error": "^1.4.0",
+        "terminal-image": "^2.0.0",
+        "url-regex-safe": "^3.0.0",
+        "yargs": "^17.5.1",
+        "yt-search": "^2.12.1"
+    },
+    "optionalDependencies": {
+        "wa-sticker-formatter": "^4.3.2"
+    }
+}
