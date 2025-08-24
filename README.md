@@ -7,6 +7,7 @@
 ## 📌 Information
 - Multi-auth session support
 - Built with the latest Baileys
+- Fix Lid ~> Jid
 - Stay updated via [WhatsApp Newsletter](https://whatsapp.com/channel/0029VaL28ZqFSAtCdSU5EX0M)
 
 ## 🚀 How to Run
