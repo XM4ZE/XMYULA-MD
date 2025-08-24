@@ -6,7 +6,6 @@
   <h3>🤖 Advanced WhatsApp Bot with Multi-Authentication Support</h3>
   
   ![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)
-  ![License](https://img.shields.io/badge/License-MIT-blue.svg)
   ![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
   
 </div>
