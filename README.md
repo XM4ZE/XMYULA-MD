@@ -188,7 +188,7 @@ npm start
 <div align="center">
 
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6281283516246)
-[![Group Chat](https://img.shields.io/badge/Group_Chat-0088CC?style=for-the-badge&logo=telegram&logoColor=white)](https://chat.whatsapp.com/your-group-link)
+[![Group Chat](https://img.shields.io/badge/Group_Chat-0088CC?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/your-group-link)
 [![Donate](https://img.shields.io/badge/☕_Buy_Me_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black)](https://telegra.ph/file/89f3b942c79acd4a5880b.jpg)
 
 </div>
