@@ -1,8 +1,27 @@
 let handler = async (m, { conn, text, usedPrefix }) => {
-  if (isNaN(text)) {
-    var number = text.split`@`[1];
-  } else if (!isNaN(text)) {
-    var number = text;
+  let number, user;
+  
+  if (!text && !m.quoted && !m.mentionedJid[0]) {
+    return conn.reply(m.chat, `Berikan nomor, tag atau reply chat target`, m);
+  }
+
+  if (m.quoted) {
+    user = m.quoted.sender;
+  } else if (m.mentionedJid[0]) {
+    user = m.mentionedJid[0];
+  } else if (text) {
+    if (text.match(/@\d+/)) {
+      number = text.split`@`[1];
+    } else if (!isNaN(text)) {
+      number = text;
+    } else {
+      return conn.reply(m.chat, `Nomor tidak valid!`, m);
+    }
+    
+    if (isNaN(number)) return conn.reply(m.chat, `Nomor tidak valid!`, m);
+    if (number.length > 15) return conn.reply(m.chat, `Format tidak valid!`, m);
+    
+    user = number + "@s.whatsapp.net";
   }
 
   const format = (num) => {
@@ -13,36 +32,30 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     );
   };
 
-  if (!text && !m.quoted)
-    return conn.reply(m.chat, `Berikan nomor, tag atau reply chat target`, m);
-  if (isNaN(number)) return conn.reply(m.chat, `Nomor tidak valid!`, m);
-  if (number.length > 15) return conn.reply(m.chat, `Format tidak valid!`, m);
   try {
-    if (text) {
-      var user = number + "@s.whatsapp.net";
-    } else if (m.quoted.sender) {
-      var user = m.quoted.sender;
-    } else if (m.mentionedJid) {
-      var user = number + "@s.whatsapp.net";
-    }
-  } catch (e) {
-  } finally {
     let groupMetadata = m.isGroup ? await conn.groupMetadata(m.chat) : {};
     let participants = m.isGroup ? groupMetadata.participants : [];
     let users = m.isGroup ? participants.find((u) => u.jid == user) : {};
-    if (!user)
+    
+    if (!user) {
       return conn.reply(
         m.chat,
         `Target atau Nomor tidak ditemukan, mungkin sudah keluar atau bukan anggota grup ini`,
         m
       );
-    if (user === m.sender)
+    }
+    
+    if (user === m.sender) {
       return conn.reply(m.chat, `Tidak bisa berpacaran dengan diri sendiri`, m);
-    if (user === conn.user.jid)
+    }
+    
+    if (user === conn.user.jid) {
       return conn.reply(m.chat, `Tidak bisa berpacaran dengan bot`, m);
+    }
 
-    if (typeof global.db.data.users[user] == "undefined")
+    if (typeof global.db.data.users[user] == "undefined") {
       return m.reply("Tidak terdaftar di database");
+    }
 
     if (
       global.db.data.users[m.sender].pasangan != "" &&
@@ -74,19 +87,20 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         if (
           m.sender == pacar &&
           global.db.data.users[m.sender].pasangan == user
-        )
+        ) {
           return conn.reply(
             m.chat,
             `Kamu sudah berpacaran dengan @${
-              beb.split("@")[0]
+              user.split("@")[0]
             }\n\nsetia dong!\ndenda : ${format(denda)} (20%)`,
             m,
             {
               contextInfo: {
-                mentionedJid: [beb],
+                mentionedJid: [user],
               },
             }
           );
+        }
         conn.reply(
           m.chat,
           `Tau sopan santun dikit teman\n@${
@@ -147,8 +161,12 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         }
       );
     }
+  } catch (e) {
+    console.error(e);
+    conn.reply(m.chat, `Terjadi kesalahan: ${e.message}`, m);
   }
 };
+
 handler.help = ["tembak"].map((v) => v + " @tag");
 handler.tags = ["pacaran"];
 handler.command = /^(tembak)$/i;
