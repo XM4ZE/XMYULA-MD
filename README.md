@@ -66,7 +66,7 @@ npm start
 
 **Price: FREE**
 
-[![⭐ Star Repo](https://img.shields.io/badge/⭐_Star_Repo-gold?style=for-the-badge)](https://github.com/XM4ZE/XMYULA-MD)
+[![ Star Repo](https://img.shields.io/badge/⭐_Star_Repo-blue?style=for-the-badge)](https://github.com/XM4ZE/XMYULA-MD)
 
 </td>
 <td align="center" width="300" style="border: 2px solid #28a745; border-radius: 10px; padding: 15px;">
