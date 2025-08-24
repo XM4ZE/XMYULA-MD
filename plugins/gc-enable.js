@@ -10,53 +10,219 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     let type = (args[0] || '').toLowerCase()
     let isAll = false, isUser = false
     
-    let caption = `
-╭──「 *PENGATURAN GRUP* 」───
-│
-├ • antilinkkick
-├ • antilinkdelete
-├ • antilinkwa 
-├ • antitagsw
-├ • antiporn 
-├ • antiacara 
-├ • antifile 
-├ • antiaudio 
-├ • antifoto 
-├ • antipolling 
-├ • antivideo 
-├ • antitoxic 
-├ • antibadword
-├ • antidelete
-├ • antiviewonce 
-├ • antisticker 
-├ • antistickerpack 
-├ • antivirtex
-├ • simi
-├ • teks 
-├ • restrict 
-├ • game
-├ • allfitur
-├ • rpg 
-├ • nsfw 
-├ • welcome 
-├ • autolevelup 
-│
-├──「 *PENGATURAN BOT* 」───
-│
-├ • autobackup
-├ • autocleartmp
-├ • autoresetlimit
-├ • autoread
-├ • composing
-├ • gconly
-├ • pconly
-├ • public
-├ • self
-├ • swonly
-├ • anticall
-├ • menu2
-╰───────────────────────
+    // Function to get status symbol
+    const getStatus = (value) => value ? '〔 ✓ 〕' : '〔 ✘ 〕'
+
+let caption = `
+\`PENGATURAN GRUP\`
+
+*[ SECURITY ]*
+${getStatus(chat.antiLinkkick)} antilinkkick
+   › Auto-kick members who send links group
+   › Aktifkan: .enable antilinkkick
+   › Nonaktifkan: .disable antilinkkick
+
+${getStatus(chat.antiLinkdelete)} antilinkdelete
+   › Delete messages containing links group
+   › Aktifkan: .enable antilinkdelete
+   › Nonaktifkan: .disable antilinkdelete
+
+${getStatus(chat.antiLinkWa)} antilinkwa
+   › Block WhatsApp users links
+   › Aktifkan: .enable antilinkwa
+   › Nonaktifkan: .disable antilinkwa
+
+${getStatus(chat.antiTagSW)} antitagsw
+   › Prevent tagging status in group
+   › Aktifkan: .enable antitagsw
+   › Nonaktifkan: .disable antitagsw
+
+${getStatus(chat.antiPorn)} antiporn
+   › Filter adult content
+   › Aktifkan: .enable antiporn
+   › Nonaktifkan: .disable antiporn
+
+${getStatus(chat.antiAcara)} antiacara
+   › Block event messages
+   › Aktifkan: .enable antiacara
+   › Nonaktifkan: .disable antiacara
+
+${getStatus(chat.antiDoc)} antifile
+   › Restrict document messages
+   › Aktifkan: .enable antifile
+   › Nonaktifkan: .disable antifile
+
+${getStatus(chat.antiAudio)} antiaudio
+   › Restrict audio messages
+   › Aktifkan: .enable antiaudio
+   › Nonaktifkan: .disable antiaudio
+
+${getStatus(chat.antiFoto)} antifoto
+   › Restrict photo messages
+   › Aktifkan: .enable antifoto
+   › Nonaktifkan: .disable antifoto
+
+${getStatus(chat.antiPolling)} antipolling
+   › Restrict polling messages
+   › Aktifkan: .enable antipolling
+   › Nonaktifkan: .disable antipolling
+
+${getStatus(chat.antiVideo)} antivideo
+   › Restrict video messages
+   › Aktifkan: .enable antivideo
+   › Nonaktifkan: .disable antivideo
+
+${getStatus(chat.antiToxic)} antitoxic
+   › Block toxic words
+   › Aktifkan: .enable antitoxic
+   › Nonaktifkan: .disable antitoxic
+
+${getStatus(chat.antiBadword)} antibadword
+   › Block bad words
+   › Aktifkan: .enable antibadword
+   › Nonaktifkan: .disable antibadword
+
+${getStatus(chat.antiDelete)} antidelete
+   › Prevent message deletion
+   › Aktifkan: .enable antidelete
+   › Nonaktifkan: .disable antidelete
+
+${getStatus(chat.viewonce)} antiviewonce
+   › Block view-once messages
+   › Aktifkan: .enable antiviewonce
+   › Nonaktifkan: .disable antiviewonce
+
+${getStatus(chat.antiSticker)} antisticker
+   › Block sticker messages
+   › Aktifkan: .enable antisticker
+   › Nonaktifkan: .disable antisticker
+
+${getStatus(chat.antiStickerPack)} antistickerpack
+   › Block sticker pack share
+   › Aktifkan: .enable antistickerpack
+   › Nonaktifkan: .disable antistickerpack
+
+${getStatus(chat.antiVirtex)} antivirtex
+   › Block text bomb / virtex
+   › Aktifkan: .enable antivirtex
+   › Nonaktifkan: .disable antivirtex
+
+*[ GROUP FEATURES ]*
+${getStatus(chat.simi)} simi
+   › Enable AI chat
+   › Aktifkan: .enable simi
+   › Nonaktifkan: .disable simi
+
+${getStatus(chat.teks)} teks
+   › Enable text-only mode
+   › Aktifkan: .enable teks
+   › Nonaktifkan: .disable teks
+
+${getStatus(chat.restrict)} restrict
+   › Restrict admin-only features
+   › Aktifkan: .enable restrict
+   › Nonaktifkan: .disable restrict
+
+${getStatus(chat.game)} game
+   › Enable games
+   › Aktifkan: .enable game
+   › Nonaktifkan: .disable game
+
+${getStatus(chat.allfitur)} allfitur
+   › Enable all features at once
+   › Aktifkan: .enable allfitur
+   › Nonaktifkan: .disable allfitur
+
+${getStatus(chat.rpg)} rpg
+   › Enable RPG mode
+   › Aktifkan: .enable rpg
+   › Nonaktifkan: .disable rpg
+
+${getStatus(chat.nsfw)} nsfw
+   › Allow NSFW content
+   › Aktifkan: .enable nsfw
+   › Nonaktifkan: .disable nsfw
+
+${getStatus(chat.welcome)} welcome
+   › Welcome new members
+   › Aktifkan: .enable welcome
+   › Nonaktifkan: .disable welcome
+
+${getStatus(chat.autolevelup)} autolevelup
+   › Auto level up members
+   › Aktifkan: .enable autolevelup
+   › Nonaktifkan: .disable autolevelup
+
+\`PENGATURAN BOT\`
+
+*[ AUTOMATION ]*
+${getStatus(bot.autobackup)} autobackup
+   › Auto backup database
+   › Aktifkan: .enable autobackup
+   › Nonaktifkan: .disable autobackup
+
+${getStatus(bot.autocleartmp)} autocleartmp
+   › Clear temp files automatically
+   › Aktifkan: .enable autocleartmp
+   › Nonaktifkan: .disable autocleartmp
+
+${getStatus(bot.autoresetlimit)} autoresetlimit
+   › Auto reset user limits daily
+   › Aktifkan: .enable autoresetlimit
+   › Nonaktifkan: .disable autoresetlimit
+
+${getStatus(bot.autoread)} autoread
+   › Auto mark messages as read
+   › Aktifkan: .enable autoread
+   › Nonaktifkan: .disable autoread
+
+${getStatus(bot.composing)} composing
+   › Show typing indicator
+   › Aktifkan: .enable composing
+   › Nonaktifkan: .disable composing
+
+*[ MODE ]*
+${getStatus(global.opts['gconly'])} gconly
+   › Respond only in groups
+   › Aktifkan: .enable gconly
+   › Nonaktifkan: .disable gconly
+
+${getStatus(global.opts['pconly'])} pconly
+   › Respond only in private chat
+   › Aktifkan: .enable pconly
+   › Nonaktifkan: .disable pconly
+
+${getStatus(!global.opts['self'])} public
+   › Public mode (anyone can use bot)
+   › Aktifkan: .enable public
+   › Nonaktifkan: .disable public
+
+${getStatus(global.opts['self'])} self
+   › Private mode (owner only)
+   › Aktifkan: .enable self
+   › Nonaktifkan: .disable self
+
+${getStatus(global.opts['swonly'])} swonly
+   › Respond only to status
+   › Aktifkan: .enable swonly
+   › Nonaktifkan: .disable swonly
+
+${getStatus(bot.anticall)} anticall
+   › Block all incoming calls
+   › Aktifkan: .enable anticall
+   › Nonaktifkan: .disable anticall
+
+${getStatus(bot.menu2)} menu2
+   › Alternate menu style
+   › Aktifkan: .enable menu2
+   › Nonaktifkan: .disable menu2
+
+*Contoh penggunaan:*
+.enable welcome - Aktifkan fitur welcome
+.disable nsfw - Nonaktifkan NSFW
+.settings - Lihat pengaturan saat ini
 `.trim()
+
 
     switch (type) {
         case 'welcome':
@@ -87,16 +253,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
                 }
             }
             chat.detect = isEnable
-            break
-            
-        case 'delete':
-            if (m.isGroup) {
-                if (!(isAdmin || isOwner)) {
-                    global.dfail('admin', m, conn)
-                    throw false
-                }
-            }
-            chat.delete = isEnable
             break
             
         case 'antiviewonce':
@@ -453,7 +609,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 
 handler.help = ['enable <command>', 'disable <command>']
 handler.tags = ['group', 'owner']
-handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|settings?)$/i
+handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|settings?|seting)$/i
 
 export default handler
 
