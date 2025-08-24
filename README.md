@@ -38,7 +38,7 @@ XMYULA-MD is a powerful WhatsApp bot built with the latest Baileys library, feat
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 20+ 
 - Git
 - ImageMagick
 - FFmpeg
