@@ -136,33 +136,9 @@ npm start
 
 ---
 
-## 📦 **XMPanels Hosting Packages**
+## 📦 **XMPanels Hosting Pterodactyl Pricelist**
 
-<div align="center">
-
-### 🏠 **Economy Tier**
-| Specifications | New Price | Renewal Price |
-|:---:|:---:|:---:|
-| 1.5GB RAM • 2GB Disk • 50% CPU | Rp 6.800 | Rp 6.000 |
-| 3GB RAM • 5GB Disk • 70% CPU | Rp 13.500 | Rp 12.500 |
-
-### 🏣 **Premium Tier**
-| Specifications | New Price | Renewal Price |
-|:---:|:---:|:---:|
-| 4GB RAM • 7GB Disk • 90% CPU | Rp 18.500 | Rp 16.500 |
-| 5GB RAM • 9GB Disk • 120% CPU | Rp 22.500 | Rp 21.000 |
-| 6GB RAM • 13GB Disk • 140% CPU | Rp 27.500 | Rp 26.000 |
-
-### 🏬 **Business Tier**
-| Specifications | New Price | Renewal Price |
-|:---:|:---:|:---:|
-| 7GB RAM • 15GB Disk • 160% CPU | Rp 32.500 | Rp 31.000 |
-| 8GB RAM • 20GB Disk • 180% CPU | Rp 37.500 | Rp 35.000 |
-| UNLIMITED Resources | Rp 105.000 | Rp 100.000 |
-
-</div>
-
----
+Quality Hosting at XMPanels! Click this button to buy and get a special price. Speed, security, and 24/7 support! [Buy Now](https://xmpanels.xmaze.my.id)
 
 ## 🛠️ **Included Software**
 
@@ -172,8 +148,6 @@ npm start
 ✅ python3-PIP   ✅ PM2            ✅ PNPM
 ✅ speedtest-CLI ✅ nodemon        ✅ puppeteer
 ```
-
----
 
 ## 📝 **Terms & Conditions**
 
