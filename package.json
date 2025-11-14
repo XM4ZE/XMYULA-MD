@@ -1,6 +1,6 @@
 {
     "name": "XMCodes",
-    "version": "6.0.0",
+    "version": "6.0.1",
     "description": "Script Free By Maximus | XM4ZE",
     "main": "index.js",
     "type": "module",
@@ -33,7 +33,7 @@
         "api-dylux": "^1.3.9",
         "awesome-phonenumber": "^2.68.0",
         "axios": "^0.24.0",
-        "baileys": "^6.7.20",
+        "baileys": "^6.7.21",
         "canvas": "^3.1.0",
         "cfonts": "^2.10.0",
         "chalk": "^5.0.0",
